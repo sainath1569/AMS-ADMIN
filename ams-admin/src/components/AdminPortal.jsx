@@ -59,14 +59,9 @@ const AdminPortal = ({ children, user }) => {
         <div className="sidebar-header">
           <div className="logo">
             <div className="nav-icon">🏛️</div>
-            <span className={`logo-text ${isSidebarOpen ? 'visible' : 'hidden'}`}>AMS Admin</span>
+            <span className={`logo-text ${isSidebarOpen ? 'visible' : 'hidden'}`}>AMS Admin(Prototype)</span>
           </div>
-          <button 
-            className="sidebar-toggle"
-            onClick={toggleSidebar}
-          >
-            {isSidebarOpen ? '◀' : '▶'}
-          </button>
+          
         </div>
 
         <nav className="sidebar-nav">

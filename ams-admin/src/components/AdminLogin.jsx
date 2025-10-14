@@ -13,7 +13,7 @@ const AdminLogin = () => {
   // Authorized admin emails
   const ADMIN_EMAILS = [
     'r210387@rguktrkv.ac.in',
-    'admin@rguktrkv.ac.in'
+    'admin@rguktrkv.ac.in',
   ];
 
   // Google OAuth Configuration
@@ -351,6 +351,71 @@ const AdminLogin = () => {
             />
             Sign in with Google
           </button>
+<button
+  style={{
+    width: '100%',
+    background: '#f3f3f3',
+    color: '#333',
+    border: '2px solid #ddd',
+    padding: '1rem 1.5rem',
+    fontSize: '1.1rem',
+    fontWeight: '600',
+    borderRadius: '12px',
+    cursor: 'pointer',
+    marginBottom: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.75rem',
+    transition: 'all 0.3s ease'
+  }}
+  onClick={async () => {
+    setIsLoading(true);
+
+    // Developer user info
+    const developerUser = {
+      name: 'Developer Access',
+      email: 'r210387@rguktrkv.ac.in',
+      picture: 'https://cdn-icons-png.flaticon.com/512/1055/1055687.png',
+      role: 'developer',
+      loginTime: new Date().toISOString()
+    };
+
+    // Save developer to localStorage
+    localStorage.setItem('adminUser', JSON.stringify(developerUser));
+
+    // Success alert
+    await Swal.fire({
+      title: 'Developer Login Successful!',
+      text: 'Redirecting to Admin Dashboard...',
+      icon: 'success',
+      confirmButtonColor: '#8B0000',
+      timer: 1500,
+      showConfirmButton: false
+    });
+
+    // Redirect to dashboard
+    navigate('/admin/dashboard', { replace: true });
+  }}
+  onMouseEnter={(e) => {
+    e.target.style.borderColor = '#8B0000';
+    e.target.style.transform = 'translateY(-2px)';
+    e.target.style.boxShadow = '0 4px 12px rgba(139, 0, 0, 0.2)';
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.borderColor = '#ddd';
+    e.target.style.transform = 'translateY(0)';
+    e.target.style.boxShadow = 'none';
+  }}
+>
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/1802/1802977.png"
+    alt="Developer"
+    style={{ width: '20px', height: '20px' }}
+  />
+  Developer Login
+</button>
+
 
           <button 
             style={{
