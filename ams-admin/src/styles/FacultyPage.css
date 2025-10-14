@@ -1,0 +1,666 @@
+/* pages/FacultyPage.css */
+.faculty-management-container {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+/* Search and Filter Row */
+.search-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Reduce search container width only */
+.search-input-container {
+  flex: 0 1 800px; /* Don't grow, can shrink, start at 400px */
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 0 15px;
+  border: 2px solid #e9ecef;
+  transition: border-color 0.3s ease;
+  min-width: 300px; /* Minimum width */
+}
+
+.search-input-container:focus-within {
+  border-color: #8B0000;
+}
+
+.search-icon {
+  margin-right: 10px;
+  color: #8B0000;
+  font-size: 16px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+.clear-search {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 5px;
+}
+
+/* Keep the rest of your existing CSS the same */
+.search-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-button-main {
+  background: #495057;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.action-buttons-container {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.upload-button1, .add-button {
+  display: flex;
+  flex: 0 0 300px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  white-space: nowrap;
+}
+.upload-button1 {
+  background: #e55a2b;
+}
+
+.upload-button1:hover {
+  background: #b04522;
+}
+
+.add-button {
+  background: #28a745;
+}
+
+.add-button:hover {
+  background: #218838;
+}
+
+.button-icon {
+  font-size: 16px;
+}
+
+/* Stats */
+.stats-container {
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.stats-text {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #8B0000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+/* Faculty List */
+.faculty-list-container {
+  display: grid;
+  gap: 15px;
+}
+
+.faculty-card {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  align-items: center;
+  border-left: 6px solid #8B0000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faculty-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.faculty-info {
+  flex: 1;
+}
+
+.faculty-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.faculty-name {
+  color: #8B0000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.faculty-badge {
+  background: #8B0000;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.faculty-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  color: #8B0000;
+  font-size: 14px;
+}
+
+.faculty-details {
+  color: #8B0000;
+  font-size: 14px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button, .remove-button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button {
+  background: #ffc107;
+}
+
+.edit-button:hover {
+  background: #e0a800;
+}
+
+.remove-button {
+  background: #dc3545;
+}
+
+.remove-button:hover {
+  background: #c82333;
+}
+
+/* Empty State */
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.empty-text {
+  color: #6c757d;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.empty-subtext {
+  color: #868e96;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8B0000;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #8B0000;
+  padding: 5px;
+}
+
+/* Filter Modal */
+.filters-modal-container {
+  padding: 25px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.filter-section {
+  margin-bottom: 25px;
+}
+
+.filter-label {
+  color: #8B0000;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.filter-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-button {
+  background: #e9ecef;
+  border: 1px solid #dee2e6;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  min-width: 60px;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.filter-button:hover {
+  background: #dee2e6;
+}
+
+.filter-button-selected {
+  background: #8B0000;
+  border-color: #8B0000;
+  color: white;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.clear-all-button, .apply-button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.clear-all-button {
+  background: #6c757d;
+  color: white;
+}
+
+.clear-all-button:hover {
+  background: #5a6268;
+}
+
+.apply-button {
+  background: #28a745;
+  color: white;
+}
+
+.apply-button:hover {
+  background: #218838;
+}
+
+/* Form Styles */
+.form-container {
+  padding: 25px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #8B0000;
+  margin-bottom: 8px;
+}
+
+.text-input {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  background: #f8f9fa;
+  transition: border-color 0.3s ease;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #8B0000;
+}
+
+.text-input-disabled {
+  background: #e9ecef;
+  color: #868e96;
+  border-color: #ced4da;
+}
+
+.option-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.option-button {
+  background: #e9ecef;
+  border: 1px solid #dee2e6;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.option-button:hover {
+  background: #dee2e6;
+}
+
+.option-button-selected {
+  background: #8B0000;
+  border-color: #8B0000;
+  color: white;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 15px;
+  padding: 25px;
+  border-top: 1px solid #e9ecef;
+}
+
+.cancel-button, .submit-button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cancel-button {
+  background: #6c757d;
+  color: white;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.submit-button {
+  background: #28a745;
+  color: white;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #218838;
+}
+
+.submit-button-disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.button-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Upload Modal */
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+  color: #8B0000;
+}
+
+.upload-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #8B0000;
+  margin-bottom: 10px;
+}
+
+.upload-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.progress-container {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.progress-text {
+  font-size: 16px;
+  color: #8B0000;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #28a745;
+  transition: width 0.3s ease;
+}
+
+.upload-modal-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ff6b35;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.upload-modal-button:hover:not(.button-disabled) {
+  background: #e55a2b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faculty-management-container {
+    padding: 15px;
+  }
+  
+  .search-filter-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .search-input-container {
+    min-width: 80%;
+    order: 1;
+  }
+  
+  .action-buttons-container {
+    order: 2;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .filter-button-main {
+    order: 3;
+    align-self: flex-end;
+  }
+  
+  .faculty-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .action-buttons {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 15px;
+  }
+  
+  .modal-content {
+    margin: 10px;
+    max-height: 90vh;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .action-buttons-container {
+    flex-direction: column;
+  }
+  
+  .upload-button1, .add-button {
+    width: 100%;
+  }
+}
